@@ -9,3 +9,6 @@ namespace HotelListingAPI.API.Data
         public virtual IList<Hotel> Hotels { get; set; }
     }
 }
+
+
+

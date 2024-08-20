@@ -4,18 +4,22 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Change the database provider from SQL Server to SQLite
 var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
-builder.Services.AddDbContext<HotelListingDbContext>(option => {
-    option.UseSqlServer(connectionString);
+builder.Services.AddDbContext<HotelListingDbContext>(options =>
+{
+    options.UseSqlite(connectionString); // Updated to use SQLite
 });
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(option => {
-    option.AddPolicy("AllowAll", b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 });
+
 // ctx => context | lc => logger configuration
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
@@ -39,4 +43,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

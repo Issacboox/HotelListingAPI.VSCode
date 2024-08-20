@@ -15,3 +15,7 @@ namespace HotelListingAPI.API.Data
         public Country Country { get; set; }
     }
 }
+
+
+
+
