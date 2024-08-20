@@ -1,0 +1,6 @@
+@HotelListingAPI.VSCode_HostAddress = http://localhost:5195
+
+GET {{HotelListingAPI.VSCode_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

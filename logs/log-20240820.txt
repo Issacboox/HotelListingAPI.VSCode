@@ -1,0 +1,6 @@
+2024-08-20 12:11:17.614 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-20 12:11:17.646 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-20 12:11:17.647 +07:00 [INF] Hosting environment: Development
+2024-08-20 12:11:17.647 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-20 12:11:42.633 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-20 12:12:06.291 +07:00 [INF] Application is shutting down...
