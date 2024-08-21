@@ -2,6 +2,7 @@
 using HotelListing.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelListingAPI.VSCode.Migrations
 {
     [DbContext(typeof(HotelListingDbContext))]
-    partial class HotelListingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240820115455_InitialMigrations")]
+    partial class InitialMigrations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -31,26 +34,6 @@ namespace HotelListingAPI.VSCode.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Thailand",
-                            ShortName = "TH"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "United Kindom",
-                            ShortName = "UK"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "United State",
-                            ShortName = "US"
-                        });
                 });
 
             modelBuilder.Entity("HotelListingAPI.API.Data.Hotel", b =>
@@ -76,32 +59,6 @@ namespace HotelListingAPI.VSCode.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Hotels");
-
-                    b.HasData(
-                        new
-                        {
-                            HotelId = 1,
-                            Address = "Bangkok, Thailand",
-                            CountryId = 1,
-                            Name = "Lorem yipsum",
-                            Rating = 5.0
-                        },
-                        new
-                        {
-                            HotelId = 2,
-                            Address = "America",
-                            CountryId = 3,
-                            Name = "Lorem yipsum 1",
-                            Rating = 5.0
-                        },
-                        new
-                        {
-                            HotelId = 3,
-                            Address = "England",
-                            CountryId = 2,
-                            Name = "Lorem yipsum 2",
-                            Rating = 5.0
-                        });
                 });
 
             modelBuilder.Entity("HotelListingAPI.VSCode.Data.Department", b =>
