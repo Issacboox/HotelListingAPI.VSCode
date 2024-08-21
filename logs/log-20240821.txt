@@ -1,0 +1,40 @@
+2024-08-21 11:51:03.434 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-21 11:51:03.463 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-21 11:51:03.464 +07:00 [INF] Hosting environment: Development
+2024-08-21 11:51:03.464 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-21 11:51:07.719 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-21 11:51:07.721 +07:00 [INF] HTTP GET / responded 404 in 2.4613 ms
+2024-08-21 11:51:11.324 +07:00 [INF] HTTP GET / responded 404 in 0.2900 ms
+2024-08-21 11:51:39.996 +07:00 [INF] HTTP GET /api/Countries responded 200 in 398.4697 ms
+2024-08-21 11:54:45.208 +07:00 [INF] HTTP POST /api/Countries responded 400 in 25.7352 ms
+2024-08-21 11:55:37.381 +07:00 [INF] HTTP POST /api/Countries responded 201 in 86.0439 ms
+2024-08-21 11:58:24.161 +07:00 [INF] HTTP GET /api/Countries/4 responded 200 in 84.1837 ms
+2024-08-21 12:03:24.690 +07:00 [INF] HTTP GET /api/Countries/1 responded 200 in 5.6033 ms
+2024-08-21 12:03:33.143 +07:00 [INF] HTTP GET /api/Countries responded 200 in 1.8472 ms
+2024-08-21 12:07:11.032 +07:00 [INF] HTTP POST /api/Countries responded 201 in 4.9566 ms
+2024-08-21 12:07:56.368 +07:00 [INF] HTTP GET /api/Countries/5 responded 200 in 2.8864 ms
+2024-08-21 12:07:58.842 +07:00 [INF] HTTP GET /api/Countries/4 responded 200 in 2.5155 ms
+2024-08-21 12:12:44.783 +07:00 [INF] Application is shutting down...
+2024-08-21 12:12:50.628 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-21 12:12:50.657 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-21 12:12:50.658 +07:00 [INF] Hosting environment: Development
+2024-08-21 12:12:50.658 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-21 12:12:59.614 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-21 12:13:00.021 +07:00 [INF] HTTP GET /api/Countries responded 200 in 407.8355 ms
+2024-08-21 12:13:16.274 +07:00 [INF] HTTP GET /api/Countries/4 responded 200 in 67.7182 ms
+2024-08-21 12:18:48.598 +07:00 [INF] HTTP GET /api/Countries/40 responded 404 in 38.9850 ms
+2024-08-21 12:31:48.536 +07:00 [INF] HTTP PUT /api/Countries/2 responded 400 in 9.3359 ms
+2024-08-21 12:32:06.023 +07:00 [INF] HTTP PUT /api/Countries/2 responded 400 in 7.5655 ms
+2024-08-21 12:32:51.678 +07:00 [INF] HTTP PUT /api/Countries/2 responded 204 in 42.8138 ms
+2024-08-21 12:33:03.334 +07:00 [INF] HTTP PUT /api/Countries/20 responded 400 in 0.9765 ms
+2024-08-21 12:33:25.499 +07:00 [INF] HTTP PUT /api/Countries/20 responded 400 in 1.4526 ms
+2024-08-21 12:33:36.356 +07:00 [INF] Application is shutting down...
+2024-08-21 12:33:40.815 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-21 12:33:40.848 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-21 12:33:40.848 +07:00 [INF] Hosting environment: Development
+2024-08-21 12:33:40.848 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-21 12:33:44.637 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-21 12:33:44.713 +07:00 [INF] HTTP PUT /api/Countries/20 responded 400 in 76.6115 ms
+2024-08-21 12:33:52.532 +07:00 [INF] HTTP PUT /api/Countries/2 responded 400 in 6.1683 ms
+2024-08-21 12:33:58.195 +07:00 [INF] HTTP PUT /api/Countries/2 responded 204 in 303.9332 ms
+2024-08-21 12:34:09.531 +07:00 [INF] HTTP GET /api/Countries responded 200 in 109.6646 ms
