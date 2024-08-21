@@ -1,8 +1,7 @@
 using AutoMapper;
-using HotelListing.API.Data;
 using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
-using HotelListingAPI.VSCode.Models.Country;
+using HotelListingAPI.VSCode.Models.Hotel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,43 +9,43 @@ namespace HotelListingAPI.VSCode.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CountriesController : ControllerBase
+    public class HotelsController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly ICountriesRepository _countriesRepository;
-
-        public CountriesController(IMapper mapper, ICountriesRepository countriesRepository)
+        private readonly IHotelsRepository _hotelsRepository;
+        public HotelsController(IMapper mapper, IHotelsRepository hotelsRepository)
         {
             this._mapper = mapper;
-            this._countriesRepository = countriesRepository;
+            this._hotelsRepository = hotelsRepository;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
+        public async Task<ActionResult<IEnumerable<GetHotelDto>>> GetHotels()
         {
-            var countries = await _countriesRepository.GetAllAsync();
-            var records = _mapper.Map<List<GetCountryDto>>(countries);
+            var hotels = await _hotelsRepository.GetAllAsync();
+            var records = _mapper.Map<List<GetHotelDto>>(hotels);
             return Ok(records);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CountryDto>> GetCountry(int id)
+        public async Task<ActionResult<HotelDto>> GetHotel(int id)
         {
-            var country = await _countriesRepository.GetDetails(id);
+            var country = await _hotelsRepository.GetHotelsDetails(id);
 
             if (country == null)
             {
                 return NotFound();
             }
 
-            var countryDto = _mapper.Map<CountryDto>(country);
+            var countryDto = _mapper.Map<HotelDto>(country);
             return Ok(countryDto);
         }
 
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountry(int id, UpdateCountryDto updateCountryDto)
+        public async Task<IActionResult> PutHotel(int id, UpdateHotelDto updateHotelDto)
         {
-            if (id != updateCountryDto.Id)
+            if (id != updateHotelDto.HotelId)
             {
                 return BadRequest("Invalid Record Id");
             }
@@ -54,21 +53,21 @@ namespace HotelListingAPI.VSCode.Controllers
 
             // _context.Entry(updateCountryDto).State = EntityState.Modified;
 
-            var country = await _countriesRepository.GetAsync(id);
-            if (country == null)
+            var hotel = await _hotelsRepository.GetAsync(id);
+            if (hotel == null)
             {
                 return NotFound();
             }
             //take all the field in updateDto to country
-            _mapper.Map(updateCountryDto, country);
+            _mapper.Map(updateHotelDto, hotel);
 
             try
             {
-                await _countriesRepository.UpdateAsync(country);
+                await _hotelsRepository.UpdateAsync(hotel);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await CountryExists(id))
+                if (!await HotelExists(id))
                 {
                     return NotFound();
                 }
@@ -81,30 +80,32 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Country>> PostCountry(CreateCountryDto createCountry)
+        public async Task<ActionResult<Hotel>> PostHotel(CreateHotelDto createHotel)
         {
-            var country = _mapper.Map<Country>(createCountry);
-            await _countriesRepository.AddAsync(country);
-            return CreatedAtAction("GetCountry", new { id = country.Id }, country);
+            var hotel = _mapper.Map<Hotel>(createHotel);
+            await _hotelsRepository.AddAsync(hotel);
+            return CreatedAtAction("GetHotel", new { id = hotel.HotelId }, hotel);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCountry(int id)
         {
-            var country = await _countriesRepository.GetAsync(id);
+            var country = await _hotelsRepository.GetAsync(id);
             if (country == null)
             {
                 return NotFound();
             }
 
-            await _countriesRepository.DeleteAsync(id);
+            await _hotelsRepository.DeleteAsync(id);
 
-            return Ok("Success");
+            return NoContent();
         }
 
-        private async Task<bool> CountryExists(int id)
+        private async Task<bool> HotelExists(int id)
         {
-            return await _countriesRepository.Exists(id);
+            return await _hotelsRepository.Exists(id);
         }
+
     }
+
 }

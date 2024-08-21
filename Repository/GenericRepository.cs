@@ -27,7 +27,7 @@ namespace HotelListingAPI.VSCode.Repository
         {
             var entity = await GetAsync(id);
             _context.Set<T>().Remove(entity);
-
+            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> Exists(int id)
@@ -44,6 +44,7 @@ namespace HotelListingAPI.VSCode.Repository
 
         public async Task<T> GetAsync(int? id)
         {
+            Console.WriteLine("Hello World!");
             if (id is null)
             {
                 return null;

@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HotelListingAPI.VSCode.Models.Country;
 
 namespace HotelListingAPI.VSCode.Models.Hotel
 {
-    public class HotelDto
+    public class HotelDto : BaseHotelDto
     {
         public int HotelId { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public double Rating { get; set; }
-        public int CountryId { get; set; }
+        public List<CountryDto> Countries { get; set; }
+       
     }
 }
