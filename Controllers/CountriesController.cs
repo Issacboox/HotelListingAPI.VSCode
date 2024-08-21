@@ -1,5 +1,7 @@
+using AutoMapper;
 using HotelListing.API.Data;
 using HotelListingAPI.API.Data;
+using HotelListingAPI.VSCode.Models.Country;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,17 +12,20 @@ namespace HotelListingAPI.VSCode.Controllers
     public class CountriesController : ControllerBase
     {
         private readonly HotelListingDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CountriesController(HotelListingDbContext context)
+        public CountriesController(HotelListingDbContext context, IMapper mapper)
         {
             _context = context;
+            this._mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Country>>> GetCountries()
+        public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
             var countries = await _context.Countries.ToListAsync();
-            return Ok(countries);
+            var records = _mapper.Map<List<GetCountryDto>>(countries);
+            return Ok(records);
         }
 
         [HttpGet("{id}")]
@@ -63,8 +68,15 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Country>> PostCountry(Country country)
+        public async Task<ActionResult<Country>> PostCountry(CreateCountryDto createCountry)
         {
+            var countryOld = new Country
+            {
+                Name = createCountry.Name,
+                ShortName = createCountry.ShortName
+            };
+
+            var country = _mapper.Map<Country>(createCountry);
             _context.Countries.Add(country);
             await _context.SaveChangesAsync();
 
