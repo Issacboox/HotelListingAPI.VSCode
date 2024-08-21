@@ -16,7 +16,7 @@ namespace HotelListingAPI.VSCode.Repository
 
         public async Task<Hotel> GetHotelsDetails(int? id)
         {
-            return await _context.Hotels.Include(q => q.HotelId).FirstOrDefaultAsync(q => q.HotelId == id);
+            return await _context.Hotels.FirstOrDefaultAsync(q => q.HotelId == id);
         }
     }
 }

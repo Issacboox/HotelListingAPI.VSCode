@@ -1,6 +1,7 @@
 using AutoMapper;
 using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
+using HotelListingAPI.VSCode.Models.ApiResponse; // Ensure this namespace is correct
 using HotelListingAPI.VSCode.Models.Hotel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace HotelListingAPI.VSCode.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IHotelsRepository _hotelsRepository;
+
         public HotelsController(IMapper mapper, IHotelsRepository hotelsRepository)
         {
             this._mapper = mapper;
@@ -20,45 +22,41 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GetHotelDto>>> GetHotels()
+        public async Task<ActionResult<ApiResponse<IEnumerable<GetHotelDto>>>> GetHotels()
         {
             var hotels = await _hotelsRepository.GetAllAsync();
             var records = _mapper.Map<List<GetHotelDto>>(hotels);
-            return Ok(records);
+            return Ok(new ApiResponse<IEnumerable<GetHotelDto>>(StatusCodes.Status200OK, true, "Hotels retrieved successfully", records, records.Count));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<HotelDto>> GetHotel(int id)
+        public async Task<ActionResult<ApiResponse<HotelDto>>> GetHotel(int id)
         {
-            var country = await _hotelsRepository.GetHotelsDetails(id);
+            var hotel = await _hotelsRepository.GetHotelsDetails(id);
 
-            if (country == null)
+            if (hotel == null)
             {
-                return NotFound();
+                return NotFound(new ApiResponse<HotelDto>(StatusCodes.Status404NotFound, false, "Hotel not found", null));
             }
 
-            var countryDto = _mapper.Map<HotelDto>(country);
-            return Ok(countryDto);
+            var hotelDto = _mapper.Map<HotelDto>(hotel);
+            return Ok(new ApiResponse<HotelDto>(StatusCodes.Status200OK, true, "Hotel retrieved successfully", hotelDto));
         }
 
-
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutHotel(int id, UpdateHotelDto updateHotelDto)
+        public async Task<ActionResult<ApiResponse<object>>> PutHotel(int id, UpdateHotelDto updateHotelDto)
         {
             if (id != updateHotelDto.HotelId)
             {
-                return BadRequest("Invalid Record Id");
+                return BadRequest(new ApiResponse<object>(StatusCodes.Status400BadRequest, false, "Invalid Record Id", null));
             }
-            // เมื่อคุณมีเอนทิตีที่ต้องการอัปเดตในฐานข้อมูล, การตั้งค่าคุณสมบัติ State ของเอนทิตีเป็น EntityState.Modified บอก EF Core ว่าเอนทิตีนี้มีการเปลี่ยนแปลงและต้องทำการอัปเดตในฐานข้อมูล
-
-            // _context.Entry(updateCountryDto).State = EntityState.Modified;
 
             var hotel = await _hotelsRepository.GetAsync(id);
             if (hotel == null)
             {
-                return NotFound();
+                return NotFound(new ApiResponse<object>(StatusCodes.Status404NotFound, false, "Hotel not found", null));
             }
-            //take all the field in updateDto to country
+
             _mapper.Map(updateHotelDto, hotel);
 
             try
@@ -69,43 +67,42 @@ namespace HotelListingAPI.VSCode.Controllers
             {
                 if (!await HotelExists(id))
                 {
-                    return NotFound();
+                    return NotFound(new ApiResponse<object>(StatusCodes.Status404NotFound, false, "Hotel not found", null));
                 }
                 else
                 {
-                    throw; // kill run time program
+                    throw; // rethrow the exception
                 }
             }
-            return NoContent(); // i did all thing but dont show anything
+
+            return Ok(new ApiResponse<object>(StatusCodes.Status200OK, true, "Hotel updated successfully", null)); // Return Ok with success message
         }
 
         [HttpPost]
-        public async Task<ActionResult<Hotel>> PostHotel(CreateHotelDto createHotel)
+        public async Task<ActionResult<ApiResponse<HotelDto>>> PostHotel(CreateHotelDto createHotel)
         {
             var hotel = _mapper.Map<Hotel>(createHotel);
             await _hotelsRepository.AddAsync(hotel);
-            return CreatedAtAction("GetHotel", new { id = hotel.HotelId }, hotel);
+            var hotelDto = _mapper.Map<HotelDto>(hotel);
+            return CreatedAtAction("GetHotel", new { id = hotel.HotelId }, new ApiResponse<HotelDto>(StatusCodes.Status201Created, true, "Hotel created successfully", hotelDto));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCountry(int id)
+        public async Task<ActionResult<ApiResponse<object>>> DeleteHotel(int id)
         {
-            var country = await _hotelsRepository.GetAsync(id);
-            if (country == null)
+            var hotel = await _hotelsRepository.GetAsync(id);
+            if (hotel == null)
             {
-                return NotFound();
+                return NotFound(new ApiResponse<object>(StatusCodes.Status404NotFound, false, "Hotel not found", null));
             }
 
             await _hotelsRepository.DeleteAsync(id);
-
-            return NoContent();
+            return Ok(new ApiResponse<object>(StatusCodes.Status200OK, true, "Hotel deleted successfully", null)); // Return Ok with success message
         }
 
         private async Task<bool> HotelExists(int id)
         {
             return await _hotelsRepository.Exists(id);
         }
-
     }
-
 }
