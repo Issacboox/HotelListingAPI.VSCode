@@ -308,3 +308,18 @@ HotelListingAPI.API.Data.Hotel -> HotelListingAPI.VSCode.Models.Hotel.HotelDto
 2024-08-21 16:08:44.733 +07:00 [INF] HTTP PUT /api/Countries/2 responded 400 in 104.4940 ms
 2024-08-21 16:09:07.858 +07:00 [INF] HTTP PUT /api/Countries/2 responded 204 in 402.6043 ms
 2024-08-21 16:35:57.758 +07:00 [INF] Application is shutting down...
+2024-08-21 17:32:16.382 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-21 17:32:16.412 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-21 17:32:16.413 +07:00 [INF] Hosting environment: Development
+2024-08-21 17:32:16.413 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-21 17:33:06.199 +07:00 [INF] Application is shutting down...
+2024-08-21 17:33:09.885 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-21 17:33:09.912 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-21 17:33:09.912 +07:00 [INF] Hosting environment: Development
+2024-08-21 17:33:09.912 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-21 17:33:13.992 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-21 17:33:14.428 +07:00 [INF] HTTP GET /api/Countries responded 200 in 437.0800 ms
+2024-08-21 17:33:18.819 +07:00 [INF] HTTP GET /api/Countries/1 responded 200 in 128.5358 ms
+2024-08-21 17:33:35.703 +07:00 [INF] HTTP POST /api/Countries responded 201 in 85.0602 ms
+2024-08-21 17:33:42.788 +07:00 [INF] HTTP PUT /api/Countries/2 responded 204 in 24.3242 ms
+2024-08-21 17:33:55.357 +07:00 [INF] Application is shutting down...
