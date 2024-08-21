@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelListingAPI.VSCode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e398c785151af3689fca7645657f7ad7ed9209cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c142d6cf68885bba63f7dc183e9b25997243685")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelListingAPI.VSCode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelListingAPI.VSCode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

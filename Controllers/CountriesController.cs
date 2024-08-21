@@ -29,26 +29,38 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Country>> GetCountry(int id)
+        public async Task<ActionResult<CountryDto>> GetCountry(int id)
         {
+            var country = await _context.Countries.Include(q => q.Hotels).FirstOrDefaultAsync(q => q.Id == id);
+
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            var countryDto = _mapper.Map<CountryDto>(country);
+            return Ok(countryDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCountry(int id, UpdateCountryDto updateCountryDto)
+        {
+            if (id != updateCountryDto.Id)
+            {
+                return BadRequest("Invalid Record Id");
+            }
+            // เมื่อคุณมีเอนทิตีที่ต้องการอัปเดตในฐานข้อมูล, การตั้งค่าคุณสมบัติ State ของเอนทิตีเป็น EntityState.Modified บอก EF Core ว่าเอนทิตีนี้มีการเปลี่ยนแปลงและต้องทำการอัปเดตในฐานข้อมูล
+
+            // _context.Entry(updateCountryDto).State = EntityState.Modified;
+
             var country = await _context.Countries.FindAsync(id);
             if (country == null)
             {
                 return NotFound();
             }
-            return Ok(country);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountry(int id, Country country)
-        {
-            if (id != country.Id)
-            {
-                return BadRequest("Invalid Record Id");
-            }
-            // เมื่อคุณมีเอนทิตีที่ต้องการอัปเดตในฐานข้อมูล, การตั้งค่าคุณสมบัติ State ของเอนทิตีเป็น EntityState.Modified บอก EF Core ว่าเอนทิตีนี้มีการเปลี่ยนแปลงและต้องทำการอัปเดตในฐานข้อมูล
-            _context.Entry(country).State = EntityState.Modified;
-
+            //take all the field in updateDto to country
+            _mapper.Map(updateCountryDto, country);
+            
             try
             {
                 await _context.SaveChangesAsync();
