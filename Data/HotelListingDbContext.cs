@@ -22,53 +22,9 @@ namespace HotelListing.API.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
 
-            modelBuilder.Entity<Country>().HasData(
-               new Country
-               {
-                   Id = 1,
-                   Name = "Thailand",
-                   ShortName = "TH"
-               },
-               new Country
-               {
-                   Id = 2,
-                   Name = "United Kindom",
-                   ShortName = "UK"
-               },
-               new Country
-               {
-                   Id = 3,
-                   Name = "United State",
-                   ShortName = "US"
-               }
-            );
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
 
-            modelBuilder.Entity<Hotel>().HasData(
-                new Hotel
-                {
-                    HotelId = 1,
-                    Name = "Lorem yipsum",
-                    Address = "Bangkok, Thailand",
-                    CountryId = 1,
-                    Rating = 5
-                },
-                 new Hotel
-                 {
-                     HotelId = 2,
-                     Name = "Lorem yipsum 1",
-                     Address = "America",
-                     CountryId = 3,
-                     Rating = 5
-                 },
-                 new Hotel
-                 {
-                     HotelId = 3,
-                     Name = "Lorem yipsum 2",
-                     Address = "England",
-                     CountryId = 2,
-                     Rating = 5
-                 }
-            );
+            modelBuilder.ApplyConfiguration(new HotelConfiguration());
         }
     }
 }

@@ -10,16 +10,24 @@ namespace HotelListingAPI.VSCode.Data.Configurations
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.HasData(
-                new IdentityRole
-                {
-                    Name = "Administrator",
-                    NormalizedName = "ADMINISTRATOR"
-                },
-                new IdentityRole
-                {
-                   Name = "User",
-                   NormalizedName = "USER" 
-                }
+               new Country
+               {
+                   Id = 1,
+                   Name = "Thailand",
+                   ShortName = "TH"
+               },
+               new Country
+               {
+                   Id = 2,
+                   Name = "United Kindom",
+                   ShortName = "UK"
+               },
+               new Country
+               {
+                   Id = 3,
+                   Name = "United State",
+                   ShortName = "US"
+               }
             );
         }
     }
