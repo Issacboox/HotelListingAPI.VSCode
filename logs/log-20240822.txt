@@ -254,3 +254,12 @@ System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorith
 2024-08-22 18:12:56.266 +07:00 [INF] HTTP POST /api/v responded 404 in 0.3478 ms
 2024-08-22 18:13:05.751 +07:00 [INF] HTTP POST /api/country responded 404 in 0.0640 ms
 2024-08-22 18:13:14.557 +07:00 [INF] HTTP POST /api/Countries responded 401 in 6.3632 ms
+2024-08-22 18:23:12.849 +07:00 [INF] Application is shutting down...
+2024-08-22 18:23:18.392 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-22 18:23:18.424 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-22 18:23:18.424 +07:00 [INF] Hosting environment: Development
+2024-08-22 18:23:18.425 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-22 18:23:36.031 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-22 18:23:36.036 +07:00 [INF] HTTP DELETE /api/Hotels/4 responded 401 in 5.3047 ms
+2024-08-22 18:23:47.357 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 600.3780 ms
+2024-08-22 18:24:04.139 +07:00 [INF] HTTP DELETE /api/Hotels/4 responded 403 in 1.0653 ms

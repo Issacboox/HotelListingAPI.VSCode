@@ -45,7 +45,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize]
+        [Authorize(Roles = "Administrator, User")]
         public async Task<ActionResult<ApiResponse<object>>> PutHotel(int id, UpdateHotelDto updateHotelDto)
         {
             if (id != updateHotelDto.HotelId)
@@ -82,6 +82,7 @@ namespace HotelListingAPI.VSCode.Controllers
 
         [HttpPost]
         [Authorize]
+        [Authorize(Roles = "Administrator, User")]
         public async Task<ActionResult<ApiResponse<HotelDto>>> PostHotel(CreateHotelDto createHotel)
         {
             var hotel = _mapper.Map<Hotel>(createHotel);
@@ -91,7 +92,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<ApiResponse<object>>> DeleteHotel(int id)
         {
             var hotel = await _hotelsRepository.GetAsync(id);
