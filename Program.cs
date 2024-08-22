@@ -1,7 +1,9 @@
 using HotelListing.API.Data;
 using HotelListingAPI.VSCode.Configuration;
 using HotelListingAPI.VSCode.Contracts;
+using HotelListingAPI.VSCode.Data;
 using HotelListingAPI.VSCode.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -13,6 +15,10 @@ builder.Services.AddDbContext<HotelListingDbContext>(options =>
 {
     options.UseSqlite(connectionString); // Updated to use SQLite
 });
+
+builder.Services.AddIdentityCore<ApiUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<HotelListingDbContext>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
