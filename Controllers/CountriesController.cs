@@ -3,6 +3,7 @@ using HotelListing.API.Data;
 using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
 using HotelListingAPI.VSCode.Models.Country;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,6 +45,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> PutCountry(int id, UpdateCountryDto updateCountryDto)
         {
             if (id != updateCountryDto.Id)
@@ -81,6 +83,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Country>> PostCountry(CreateCountryDto createCountry)
         {
             var country = _mapper.Map<Country>(createCountry);
@@ -89,6 +92,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteCountry(int id)
         {
             var country = await _countriesRepository.GetAsync(id);

@@ -3,6 +3,7 @@ using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
 using HotelListingAPI.VSCode.Models.ApiResponse; // Ensure this namespace is correct
 using HotelListingAPI.VSCode.Models.Hotel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,6 +45,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<ActionResult<ApiResponse<object>>> PutHotel(int id, UpdateHotelDto updateHotelDto)
         {
             if (id != updateHotelDto.HotelId)
@@ -79,6 +81,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ApiResponse<HotelDto>>> PostHotel(CreateHotelDto createHotel)
         {
             var hotel = _mapper.Map<Hotel>(createHotel);
@@ -88,6 +91,7 @@ namespace HotelListingAPI.VSCode.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<ActionResult<ApiResponse<object>>> DeleteHotel(int id)
         {
             var hotel = await _hotelsRepository.GetAsync(id);

@@ -13,3 +13,5 @@ namespace HotelListingAPI.VSCode.Models.User
 
     }
 }
+
+

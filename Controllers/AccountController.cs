@@ -46,14 +46,15 @@ namespace HotelListingAPI.VSCode.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> Login([FromBody] LoginDto loginDto)
         {
-            var isValidUser = await _authManager.Login(loginDto);
+            var authResponse = await _authManager.Login(loginDto);
 
-            if (!isValidUser)
+            if (authResponse == null)
             {
-                return Unauthorized(new ApiResponse<object>(StatusCodes.Status401Unauthorized, true, "Succesfully Created", null));
+                return Unauthorized(new ApiResponse<object>(StatusCodes.Status401Unauthorized, true, "Unauthorized", null));
             }
 
-            return Ok(new ApiResponse<ApiUserDto>(StatusCodes.Status200OK, true, "Login Succesfully!", null));
+            return Ok(new ApiResponse<AuthResponseDto>(StatusCodes.Status200OK, true, "Login Successfully!", authResponse));
         }
+
     }
 }
