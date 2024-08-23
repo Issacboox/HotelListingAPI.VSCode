@@ -6,6 +6,7 @@ using HotelListingAPI.VSCode.Data;
 using HotelListingAPI.VSCode.Middleware;
 using HotelListingAPI.VSCode.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -96,7 +97,9 @@ builder.Services.AddResponseCaching(options =>
     options.UseCaseSensitivePaths = true;
 });
 
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+    .AddCheck<CustomHealthCheck>("Custom Health Check", failureStatus: HealthStatus.Degraded,
+    tags: new[] { "custom" });
 
 builder.Services.AddControllers().AddOData(options =>
 {
@@ -113,7 +116,39 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.MapHealthChecks("/healthcheck");
+app.MapHealthChecks("/healthcheck", new HealthCheckOptions
+{
+    Predicate = healthcheck => healthcheck.Tags.Contains("custom"),
+    ResultStatusCodes = 
+    {
+        [HealthStatus.Healthy] = StatusCodes.Status200OK,
+        [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable,
+        [HealthStatus.Degraded] = StatusCodes.Status200OK,
+    },
+    ResponseWriter = WriteResponse
+});
+
+static Task WriteResponse(HttpContext context, HealthReport health)
+{
+    context.Response.ContentType = "application/json";
+
+    var response = new
+    {
+        status = health.Status.ToString(),
+        totalDuration = health.TotalDuration,
+        checks = health.Entries.Select(entry => new
+        {
+            name = entry.Key,
+            status = entry.Value.Status.ToString(),
+            description = entry.Value.Description,
+            duration = entry.Value.Duration,
+            exception = entry.Value.Exception?.Message
+        })
+    };
+
+    return context.Response.WriteAsJsonAsync(response);
+}
+
 
 app.UseSerilogRequestLogging();
 
@@ -129,7 +164,7 @@ app.Use(async (context, next) =>
     new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
     {
         Public = true,
-        MaxAge = TimeSpan.FromSeconds(30)
+        MaxAge = TimeSpan.FromSeconds(5)
     };
 
     context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
@@ -149,7 +184,7 @@ class CustomHealthCheck : IHealthCheck
 {
     public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
     {
-        var isHealthy = true ;
+        var isHealthy = true;
 
         // custom check logic 
         if (isHealthy)

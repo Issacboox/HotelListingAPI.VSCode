@@ -233,3 +233,27 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2024-08-23 17:17:32.351 +07:00 [WRN] Failed to determine the https port for redirect.
 2024-08-23 17:17:32.355 +07:00 [INF] HTTP GET / responded 404 in 3.6343 ms
 2024-08-23 17:17:41.236 +07:00 [INF] HTTP GET /healthcheck responded 200 in 3.2878 ms
+2024-08-23 17:23:56.774 +07:00 [INF] Application is shutting down...
+2024-08-23 17:24:03.200 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 17:24:03.219 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 17:24:03.219 +07:00 [INF] Hosting environment: Development
+2024-08-23 17:24:03.219 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 17:24:06.463 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 17:24:06.466 +07:00 [INF] HTTP GET / responded 404 in 3.8250 ms
+2024-08-23 17:24:11.883 +07:00 [INF] HTTP GET /healthcheck responded 200 in 11.5399 ms
+2024-08-23 17:24:15.082 +07:00 [INF] HTTP GET /healthcheck responded 200 in 1.3667 ms
+2024-08-23 17:24:16.297 +07:00 [INF] HTTP GET /healthcheck responded 200 in 0.4383 ms
+2024-08-23 17:28:14.588 +07:00 [INF] Application is shutting down...
+2024-08-23 17:28:20.016 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 17:28:20.034 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 17:28:20.034 +07:00 [INF] Hosting environment: Development
+2024-08-23 17:28:20.034 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 17:28:21.773 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 17:28:21.782 +07:00 [INF] HTTP GET /healthcheck responded 200 in 9.9189 ms
+2024-08-23 17:30:39.489 +07:00 [INF] Application is shutting down...
+2024-08-23 17:34:32.872 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 17:34:32.890 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 17:34:32.890 +07:00 [INF] Hosting environment: Development
+2024-08-23 17:34:32.890 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 17:34:34.954 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 17:34:34.975 +07:00 [INF] HTTP GET /healthcheck responded 200 in 21.4886 ms
