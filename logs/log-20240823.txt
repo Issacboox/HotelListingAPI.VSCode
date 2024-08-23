@@ -134,3 +134,4 @@ System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'Hotel
 2024-08-23 15:18:39.301 +07:00 [INF] HTTP GET /api/Hotels responded 404 in 0.0275 ms
 2024-08-23 15:18:51.874 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 24.8984 ms
 2024-08-23 15:18:59.980 +07:00 [INF] HTTP GET /api/Hotels responded 404 in 0.0335 ms
+2024-08-23 15:32:33.885 +07:00 [INF] Application is shutting down...
