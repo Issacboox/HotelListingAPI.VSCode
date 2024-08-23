@@ -1,6 +1,9 @@
 
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using HotelListing.API.Data;
 using HotelListingAPI.VSCode.Contracts;
+using HotelListingAPI.VSCode.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelListingAPI.VSCode.Repository
@@ -8,11 +11,13 @@ namespace HotelListingAPI.VSCode.Repository
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly HotelListingDbContext _context;
+        private readonly IMapper _mapper;
 
         //make to interact with database
-        public GenericRepository(HotelListingDbContext context)
+        public GenericRepository(HotelListingDbContext context, IMapper mapper)
         {
             this._context = context;
+            this._mapper = mapper;
         }
 
         public async Task<T> AddAsync(T entity)
@@ -56,6 +61,24 @@ namespace HotelListingAPI.VSCode.Repository
         {
             _context.Update(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<PagedResult<TResults>> GetAllAsync<TResults>(QueryParameters queryParameters)
+        {
+            var totalSize = await _context.Set<T>().CountAsync();
+            var items = await _context.Set<T>()
+            .Skip(queryParameters.StartIndex)
+            .Take(queryParameters.PageSize)
+            .ProjectTo<TResults>(_mapper.ConfigurationProvider)
+            .ToListAsync();
+
+            return new PagedResult<TResults>
+            {
+                Items = items,
+                PageNumber = queryParameters.PageNumber + 1,
+                RecordNumber = queryParameters.PageSize,
+                TotalCount = totalSize
+            };
         }
     }
 }

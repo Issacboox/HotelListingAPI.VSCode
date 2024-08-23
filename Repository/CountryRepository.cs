@@ -1,3 +1,4 @@
+using AutoMapper;
 using HotelListing.API.Data;
 using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
@@ -9,11 +10,13 @@ namespace HotelListingAPI.VSCode.Repository
     public class CountryRepository : GenericRepository<Country>, ICountriesRepository
     {
         private readonly HotelListingDbContext _context;
+        private readonly IMapper _mapper;
 
         // คอนสตรัคเตอร์ที่รับ HotelListingDbContext และส่งไปให้คลาสแม่ (GenericRepository)
-        public CountryRepository(HotelListingDbContext context) : base(context)
+        public CountryRepository(HotelListingDbContext context,IMapper mapper) : base(context,mapper)
         {
             this._context = context;
+            this._mapper = mapper;
             // ไม่มีการเพิ่มการทำงานใหม่เพิ่มเติมที่นี่ แค่ส่ง context ไปยังคลาสแม่
         }
 

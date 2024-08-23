@@ -135,3 +135,34 @@ System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'Hotel
 2024-08-23 15:18:51.874 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 24.8984 ms
 2024-08-23 15:18:59.980 +07:00 [INF] HTTP GET /api/Hotels responded 404 in 0.0335 ms
 2024-08-23 15:32:33.885 +07:00 [INF] Application is shutting down...
+2024-08-23 16:24:54.297 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:24:54.328 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:24:54.328 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:24:54.328 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:24:57.438 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/v{version}/Hotels" for actions - HotelListingAPI.VSCode.Controllers.HotelsController.GetHotels (HotelListingAPI.VSCode),HotelListingAPI.VSCode.Controllers.HotelsController.GetPagedHotels (HotelListingAPI.VSCode). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-23 16:27:11.738 +07:00 [INF] Application is shutting down...
+2024-08-23 16:27:16.066 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:27:16.094 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:27:16.094 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:27:16.094 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:27:32.734 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:27:33.247 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-23 16:27:33.248 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-23 16:27:33.266 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 533.8446 ms
+2024-08-23 16:30:53.391 +07:00 [INF] Application is shutting down...
+2024-08-23 16:30:57.946 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:30:57.975 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:30:57.975 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:30:57.975 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:31:13.483 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:31:13.968 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-23 16:31:13.968 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-23 16:31:13.986 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 504.6023 ms

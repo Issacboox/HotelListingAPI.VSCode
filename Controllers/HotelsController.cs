@@ -1,6 +1,7 @@
 using AutoMapper;
 using HotelListingAPI.API.Data;
 using HotelListingAPI.VSCode.Contracts;
+using HotelListingAPI.VSCode.Models;
 using HotelListingAPI.VSCode.Models.ApiResponse; // Ensure this namespace is correct
 using HotelListingAPI.VSCode.Models.Hotel;
 using Microsoft.AspNetCore.Authorization;
@@ -29,6 +30,13 @@ namespace HotelListingAPI.VSCode.Controllers
             var hotels = await _hotelsRepository.GetAllAsync();
             var records = _mapper.Map<List<GetHotelDto>>(hotels);
             return Ok(new ApiResponse<IEnumerable<GetHotelDto>>(StatusCodes.Status200OK, true, "Hotels retrieved successfully", records, records.Count));
+        }
+
+        [HttpGet("paged")]
+        public async Task<ActionResult<PagedResult<GetHotelDto>>> GetPagedHotels([FromQuery] QueryParameters queryParameters)
+        {
+            var pagedHotelResults = await _hotelsRepository.GetAllAsync<GetHotelDto>(queryParameters);
+            return Ok(pagedHotelResults);
         }
 
         [HttpGet("{id}")]

@@ -1,4 +1,4 @@
-using HotelListingAPI.API.Data;
+using HotelListingAPI.VSCode.Models;
 
 namespace HotelListingAPI.VSCode.Contracts
 {
@@ -7,6 +7,7 @@ namespace HotelListingAPI.VSCode.Contracts
     {
         Task<T> GetAsync(int? id);
         Task<List<T>> GetAllAsync();
+        Task<PagedResult<TResults>> GetAllAsync<TResults>(QueryParameters queryParameters);
         Task<T> AddAsync(T entity);
         Task DeleteAsync(int id);
         Task UpdateAsync(T entity);
