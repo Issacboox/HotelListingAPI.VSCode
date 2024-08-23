@@ -11,8 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OData.UriParser;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -94,6 +96,8 @@ builder.Services.AddResponseCaching(options =>
     options.UseCaseSensitivePaths = true;
 });
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddControllers().AddOData(options =>
 {
     options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100);
@@ -108,6 +112,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.MapHealthChecks("/healthcheck");
 
 app.UseSerilogRequestLogging();
 
@@ -137,3 +143,20 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+class CustomHealthCheck : IHealthCheck
+{
+    public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
+    {
+        var isHealthy = true ;
+
+        // custom check logic 
+        if (isHealthy)
+        {
+            return Task.FromResult(HealthCheckResult.Healthy("All System are looking good !"));
+        }
+
+        return Task.FromResult(new HealthCheckResult(context.Registration.FailureStatus, "System Unhealthy"));
+    }
+}
