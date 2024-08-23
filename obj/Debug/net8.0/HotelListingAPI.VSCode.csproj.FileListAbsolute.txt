@@ -183,3 +183,8 @@
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.dll
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.OData.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.OData.Core.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.OData.Edm.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.OData.ModelBuilder.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.Spatial.dll

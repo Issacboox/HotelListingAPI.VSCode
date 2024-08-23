@@ -166,3 +166,63 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2024-08-23 16:31:13.968 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
 2024-08-23 16:31:13.968 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
 2024-08-23 16:31:13.986 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 504.6023 ms
+2024-08-23 16:34:53.044 +07:00 [INF] Application is shutting down...
+2024-08-23 16:45:59.587 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:45:59.606 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:45:59.606 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:45:59.606 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:46:15.192 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:46:15.886 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 694.6780 ms
+2024-08-23 16:46:40.540 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 22.5090 ms
+2024-08-23 16:46:52.362 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 1.7073 ms
+2024-08-23 16:47:32.566 +07:00 [INF] Application is shutting down...
+2024-08-23 16:48:05.794 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:48:05.813 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:48:05.813 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:48:05.813 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:48:11.817 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:48:12.497 +07:00 [INF] HTTP GET /api/v1/Hotels responded 400 in 680.1591 ms
+2024-08-23 16:48:47.622 +07:00 [INF] Application is shutting down...
+2024-08-23 16:48:52.775 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:48:52.794 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:48:52.794 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:48:52.794 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:49:04.483 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:49:05.155 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 673.0706 ms
+2024-08-23 16:49:41.421 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 400 in 44.2839 ms
+2024-08-23 16:49:57.883 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 11.3339 ms
+2024-08-23 16:50:10.759 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 1.3912 ms
+2024-08-23 16:50:18.366 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.2803 ms
+2024-08-23 16:51:13.754 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 18.0165 ms
+2024-08-23 16:51:19.735 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.2450 ms
+2024-08-23 16:51:21.352 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.1518 ms
+2024-08-23 16:51:22.256 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.2097 ms
+2024-08-23 16:51:29.242 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.1507 ms
+2024-08-23 16:52:29.895 +07:00 [INF] Application is shutting down...
+2024-08-23 16:53:33.100 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:53:33.120 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:53:33.120 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:53:33.120 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:53:36.171 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:53:36.846 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 400 in 674.9675 ms
+2024-08-23 16:57:52.630 +07:00 [INF] Application is shutting down...
+2024-08-23 16:57:57.675 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 16:57:57.693 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 16:57:57.693 +07:00 [INF] Hosting environment: Development
+2024-08-23 16:57:57.693 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 16:57:59.139 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 16:57:59.838 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 698.8100 ms
+2024-08-23 17:01:14.054 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 400 in 10.0966 ms
+2024-08-23 17:01:21.291 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 25.1755 ms
+2024-08-23 17:01:32.898 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 1.6172 ms
+2024-08-23 17:01:39.719 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.4846 ms
+2024-08-23 17:01:46.272 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.2633 ms
+2024-08-23 17:01:54.556 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 21.2631 ms
+2024-08-23 17:02:32.002 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 16.2925 ms
+2024-08-23 17:02:57.356 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.5673 ms
+2024-08-23 17:02:59.889 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.1613 ms
+2024-08-23 17:03:00.665 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.2313 ms
+2024-08-23 17:03:01.332 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.1498 ms
+2024-08-23 17:03:02.093 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 6.1209 ms
+2024-08-23 17:03:02.620 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 0.1715 ms
+2024-08-23 17:04:20.248 +07:00 [INF] Application is shutting down...

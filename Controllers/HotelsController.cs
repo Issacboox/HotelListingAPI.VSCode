@@ -6,6 +6,7 @@ using HotelListingAPI.VSCode.Models.ApiResponse; // Ensure this namespace is cor
 using HotelListingAPI.VSCode.Models.Hotel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelListingAPI.VSCode.Controllers
@@ -24,13 +25,24 @@ namespace HotelListingAPI.VSCode.Controllers
             this._hotelsRepository = hotelsRepository;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<GetHotelDto>>>> GetHotels()
+        // [HttpGet("all")]
+        // [EnableQuery]
+        // public async Task<ActionResult<ApiResponse<IEnumerable<GetHotelDto>>>> GetHotels()
+        // {
+        //     var hotels = await _hotelsRepository.GetAllAsync();
+        //     var records = _mapper.Map<List<GetHotelDto>>(hotels);
+        //     return Ok(new ApiResponse<IEnumerable<GetHotelDto>>(StatusCodes.Status200OK, true, "Hotels retrieved successfully", records, records.Count));
+        // }
+
+        [HttpGet("all")]
+        [EnableQuery]
+        public async Task<ActionResult<IQueryable<GetHotelDto>>> GetHotels()
         {
             var hotels = await _hotelsRepository.GetAllAsync();
             var records = _mapper.Map<List<GetHotelDto>>(hotels);
-            return Ok(new ApiResponse<IEnumerable<GetHotelDto>>(StatusCodes.Status200OK, true, "Hotels retrieved successfully", records, records.Count));
+            return Ok(records.AsQueryable()); 
         }
+
 
         [HttpGet("paged")]
         public async Task<ActionResult<PagedResult<GetHotelDto>>> GetPagedHotels([FromQuery] QueryParameters queryParameters)
