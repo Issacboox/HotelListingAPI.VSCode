@@ -1,0 +1,113 @@
+2024-08-23 11:51:55.387 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 11:51:55.417 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 11:51:55.417 +07:00 [INF] Hosting environment: Development
+2024-08-23 11:51:55.417 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 11:52:02.938 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 11:52:03.550 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 611.9737 ms
+2024-08-23 11:52:08.414 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 75.9370 ms
+2024-08-23 11:55:10.271 +07:00 [INF] Application is shutting down...
+2024-08-23 11:55:15.958 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 11:55:15.987 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 11:55:15.987 +07:00 [INF] Hosting environment: Development
+2024-08-23 11:55:15.987 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 11:55:17.753 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 11:55:18.338 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 585.0222 ms
+2024-08-23 11:56:30.420 +07:00 [INF] HTTP GET / responded 404 in 0.9719 ms
+2024-08-23 11:56:42.014 +07:00 [INF] HTTP GET / responded 404 in 0.3633 ms
+2024-08-23 11:56:45.023 +07:00 [INF] HTTP GET / responded 404 in 0.1171 ms
+2024-08-23 11:57:03.883 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 85.8484 ms
+2024-08-23 11:57:45.883 +07:00 [ERR] HTTP POST /api/Account/refreshtoken responded 500 in 35.4728 ms
+System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'HotelListingapi' is registered.
+   at Microsoft.AspNetCore.Identity.UserManager`1.VerifyUserTokenAsync(TUser user, String tokenProvider, String purpose, String token)
+   at HotelListingAPI.VSCode.Repository.AuthManager.VerifyRefreshToken(AuthResponseDto request) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 118
+   at HotelListingAPI.VSCode.Controllers.AccountController.RefreshToken(AuthResponseDto req) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Controllers/AccountController.cs:line 67
+   at lambda_method174(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-08-23 11:57:45.886 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'HotelListingapi' is registered.
+   at Microsoft.AspNetCore.Identity.UserManager`1.VerifyUserTokenAsync(TUser user, String tokenProvider, String purpose, String token)
+   at HotelListingAPI.VSCode.Repository.AuthManager.VerifyRefreshToken(AuthResponseDto request) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 118
+   at HotelListingAPI.VSCode.Controllers.AccountController.RefreshToken(AuthResponseDto req) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Controllers/AccountController.cs:line 67
+   at lambda_method174(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-23 11:59:46.054 +07:00 [INF] Application is shutting down...
+2024-08-23 11:59:52.225 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 11:59:52.253 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 11:59:52.254 +07:00 [INF] Hosting environment: Development
+2024-08-23 11:59:52.254 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 11:59:55.164 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 11:59:55.794 +07:00 [ERR] HTTP POST /api/Account/login responded 500 in 630.5726 ms
+System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'HotelListingapi' is registered.
+   at Microsoft.AspNetCore.Identity.UserManager`1.GenerateUserTokenAsync(TUser user, String tokenProvider, String purpose)
+   at HotelListingAPI.VSCode.Repository.AuthManager.CreateRefreshToken() in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 99
+   at HotelListingAPI.VSCode.Repository.AuthManager.Login(LoginDto loginDto) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 56
+   at HotelListingAPI.VSCode.Controllers.AccountController.Login(LoginDto loginDto) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Controllers/AccountController.cs:line 49
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-08-23 11:59:55.797 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'HotelListingapi' is registered.
+   at Microsoft.AspNetCore.Identity.UserManager`1.GenerateUserTokenAsync(TUser user, String tokenProvider, String purpose)
+   at HotelListingAPI.VSCode.Repository.AuthManager.CreateRefreshToken() in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 99
+   at HotelListingAPI.VSCode.Repository.AuthManager.Login(LoginDto loginDto) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Repository/AuthManager.cs:line 56
+   at HotelListingAPI.VSCode.Controllers.AccountController.Login(LoginDto loginDto) in /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/Controllers/AccountController.cs:line 49
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-23 12:00:11.768 +07:00 [INF] Application is shutting down...
+2024-08-23 12:00:17.175 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 12:00:17.204 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 12:00:17.204 +07:00 [INF] Hosting environment: Development
+2024-08-23 12:00:17.204 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 12:00:20.825 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 12:00:21.491 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 666.2535 ms

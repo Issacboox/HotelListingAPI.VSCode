@@ -8,6 +8,8 @@ namespace HotelListingAPI.VSCode.Contracts
     {
         Task<IEnumerable<IdentityError>> Register(ApiUserDto userDto);
         Task<AuthResponseDto> Login(LoginDto loginDto);
-        Task<string> GenerateToken(ApiUser apiUser);
+        Task<string> GenerateToken();
+        Task<string> CreateRefreshToken();
+        Task<AuthResponseDto> VerifyRefreshToken(AuthResponseDto request);
     }
 }
