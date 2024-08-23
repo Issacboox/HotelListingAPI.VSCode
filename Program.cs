@@ -3,6 +3,7 @@ using HotelListing.API.Data;
 using HotelListingAPI.VSCode.Configuration;
 using HotelListingAPI.VSCode.Contracts;
 using HotelListingAPI.VSCode.Data;
+using HotelListingAPI.VSCode.Middleware;
 using HotelListingAPI.VSCode.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -73,6 +74,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseSerilogRequestLogging();
 
