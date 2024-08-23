@@ -181,3 +181,5 @@
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.dll
+/Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

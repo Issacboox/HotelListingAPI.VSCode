@@ -111,3 +111,26 @@ System.NotSupportedException: No IUserTwoFactorTokenProvider<TUser> named 'Hotel
 2024-08-23 12:00:17.204 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
 2024-08-23 12:00:20.825 +07:00 [WRN] Failed to determine the https port for redirect.
 2024-08-23 12:00:21.491 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 666.2535 ms
+2024-08-23 14:55:21.695 +07:00 [INF] Application is shutting down...
+2024-08-23 15:07:36.876 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 15:07:36.905 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 15:07:36.906 +07:00 [INF] Hosting environment: Development
+2024-08-23 15:07:36.906 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 15:07:57.040 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 15:07:57.533 +07:00 [INF] HTTP GET /api/Hotels responded 200 in 492.5564 ms
+2024-08-23 15:08:20.050 +07:00 [INF] HTTP GET /api/Hotels responded 200 in 24.4470 ms
+2024-08-23 15:08:24.096 +07:00 [INF] HTTP GET /api/Hotels responded 400 in 2.5383 ms
+2024-08-23 15:08:50.742 +07:00 [INF] HTTP GET /api/Hotels responded 200 in 11.2737 ms
+2024-08-23 15:09:54.307 +07:00 [INF] HTTP GET /api/Hotels responded 200 in 3.5231 ms
+2024-08-23 15:12:12.141 +07:00 [INF] Application is shutting down...
+2024-08-23 15:17:51.122 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-23 15:17:51.154 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-23 15:17:51.154 +07:00 [INF] Hosting environment: Development
+2024-08-23 15:17:51.154 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-23 15:17:56.803 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-23 15:17:56.805 +07:00 [INF] HTTP GET / responded 404 in 2.3591 ms
+2024-08-23 15:17:59.874 +07:00 [INF] HTTP GET / responded 404 in 0.3650 ms
+2024-08-23 15:18:11.378 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 464.8757 ms
+2024-08-23 15:18:39.301 +07:00 [INF] HTTP GET /api/Hotels responded 404 in 0.0275 ms
+2024-08-23 15:18:51.874 +07:00 [INF] HTTP GET /api/v1/Hotels responded 200 in 24.8984 ms
+2024-08-23 15:18:59.980 +07:00 [INF] HTTP GET /api/Hotels responded 404 in 0.0335 ms
