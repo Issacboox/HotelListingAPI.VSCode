@@ -5,5 +5,6 @@ namespace HotelListingAPI.VSCode.Contracts
     public interface IHotelsRepository : IGenericRepository<Hotel>
     {
         Task<Hotel> GetHotelsDetails(int? id); 
+        // Task string SomeLongRunningOperation();
     }
 }

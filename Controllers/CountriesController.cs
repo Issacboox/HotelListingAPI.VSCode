@@ -22,6 +22,21 @@ namespace HotelListingAPI.VSCode.Controllers
             this._countriesRepository = countriesRepository;
         }
 
+        [HttpGet("testlist")]
+        public async void TestKa()
+        {
+            List<int> myNum = new List<int> { 1, 2, 3, 4, 5 };
+            int indexToRemove = 2; 
+            myNum.RemoveAt(indexToRemove); 
+
+            foreach (int number in myNum)
+            {
+                // myNum
+                Console.WriteLine(number);
+            }
+            return;
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {

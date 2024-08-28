@@ -32,7 +32,37 @@ namespace HotelListingAPI.VSCode.Controllers
         //     var hotels = await _hotelsRepository.GetAllAsync();
         //     var records = _mapper.Map<List<GetHotelDto>>(hotels);
         //     return Ok(new ApiResponse<IEnumerable<GetHotelDto>>(StatusCodes.Status200OK, true, "Hotels retrieved successfully", records, records.Count));
+        // // }
+        // [HttpGet("test")]
+        // public async Task<string> GetData()
+        // {
+        //     var data = await SomeLongRunningOperation();
+        //     Console.Write("continue ?");
+        //     return data;
         // }
+
+        // public async void SomeLongRunningOperation()
+        // {
+        //     var hello = "hello ka";
+
+        //     for (int i = 0; i < 1000; i++)
+        //     {
+        //         Console.Write($"Count {i}");
+        //     }
+        //     return;
+        // }
+
+        [HttpGet("test")]
+        public async void GetData()
+        {
+            await Task.Delay(10000);
+            Console.Write("Delay 5000");
+            await Task.Delay(1000);
+            Console.Write("Delay 1000");
+        }
+
+        // Changed the return type from void to Task
+    
 
         [HttpGet("all")]
         [EnableQuery]
@@ -40,7 +70,7 @@ namespace HotelListingAPI.VSCode.Controllers
         {
             var hotels = await _hotelsRepository.GetAllAsync();
             var records = _mapper.Map<List<GetHotelDto>>(hotels);
-            return Ok(records.AsQueryable()); 
+            return Ok(records.AsQueryable());
         }
 
 

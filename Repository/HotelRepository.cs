@@ -21,5 +21,15 @@ namespace HotelListingAPI.VSCode.Repository
         {
             return await _context.Hotels.FirstOrDefaultAsync(q => q.HotelId == id);
         }
+
+        // public string SomeLongRunningOperation()
+        // {
+        //     var hello = "hello ka" ;
+        //     for (int i = 0; i < 1000; i++)
+        //     {
+        //         Console.Write($"Count {i}");
+        //     }
+        //     return hello;
+        // }
     }
 }
