@@ -75,7 +75,7 @@ namespace HotelListingAPI.VSCode.Repository
             return new PagedResult<TResults>
             {
                 Items = items,
-                PageNumber = queryParameters.PageNumber + 1,
+                PageNumber = queryParameters.PageNumber,
                 RecordNumber = queryParameters.PageSize,
                 TotalCount = totalSize
             };

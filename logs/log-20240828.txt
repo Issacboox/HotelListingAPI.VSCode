@@ -1,0 +1,49 @@
+2024-08-28 17:04:08.616 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-28 17:04:08.634 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 17:04:08.635 +07:00 [INF] Hosting environment: Development
+2024-08-28 17:04:08.635 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-28 17:04:15.879 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-28 17:04:16.512 +07:00 [INF] JWT generated successfully for user maruko@example.com
+2024-08-28 17:04:16.592 +07:00 [INF] Refresh token created successfully for user maruko@example.com
+2024-08-28 17:04:16.592 +07:00 [INF] Login successful for user maruko@example.com
+2024-08-28 17:04:16.604 +07:00 [INF] HTTP POST /api/Account/login responded 200 in 725.9319 ms
+2024-08-28 17:14:27.966 +07:00 [INF] HTTP DELETE /api/Hotels/4 responded 404 in 0.2334 ms
+2024-08-28 17:14:42.388 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 285.3972 ms
+2024-08-28 17:14:57.730 +07:00 [INF] HTTP DELETE /api/Hotels/2 responded 404 in 0.1149 ms
+2024-08-28 17:15:19.470 +07:00 [INF] HTTP DELETE /api/v1/Hotels/2 responded 401 in 4.6926 ms
+2024-08-28 17:33:34.915 +07:00 [INF] HTTP GET / responded 404 in 0.2039 ms
+2024-08-28 17:33:56.531 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 17:33:56.532 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 17:33:56.536 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 53.3933 ms
+2024-08-28 17:34:06.968 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 7.5792 ms
+2024-08-28 17:34:16.073 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 4.4870 ms
+2024-08-28 17:42:40.723 +07:00 [INF] HTTP GET / responded 404 in 0.2015 ms
+2024-08-28 17:42:44.544 +07:00 [INF] HTTP GET /healthcheck responded 200 in 10.1393 ms
+2024-08-28 18:58:52.011 +07:00 [INF] Register Attempt for daaa@example.com
+2024-08-28 18:58:52.086 +07:00 [INF] User registered successfully: daaa@example.com
+2024-08-28 18:58:52.087 +07:00 [INF] HTTP POST /api/Account/register responded 200 in 82.3977 ms
+2024-08-28 19:01:57.047 +07:00 [INF] Application is shutting down...
+2024-08-28 19:03:15.443 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-28 19:03:15.461 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 19:03:15.461 +07:00 [INF] Hosting environment: Development
+2024-08-28 19:03:15.461 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-28 19:03:53.377 +07:00 [INF] Application is shutting down...
+2024-08-28 19:49:11.293 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-28 19:49:11.311 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 19:49:11.311 +07:00 [INF] Hosting environment: Development
+2024-08-28 19:49:11.311 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-28 19:49:29.746 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-28 19:49:30.229 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 19:49:30.229 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 19:49:30.250 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 504.0966 ms
+2024-08-28 19:50:16.240 +07:00 [INF] Application is shutting down...
+2024-08-28 19:50:20.709 +07:00 [INF] Now listening on: http://localhost:5195
+2024-08-28 19:50:20.727 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 19:50:20.728 +07:00 [INF] Hosting environment: Development
+2024-08-28 19:50:20.728 +07:00 [INF] Content root path: /Users/nuraratsangreuang/Documents/dotnet/HotelListingAPI.VSCode
+2024-08-28 19:50:28.804 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-08-28 19:50:29.277 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 19:50:29.278 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-08-28 19:50:29.306 +07:00 [INF] HTTP GET /api/v1/Hotels/paged responded 200 in 502.4611 ms
+2024-08-28 20:00:11.243 +07:00 [INF] HTTP GET /api/Hotels/8 responded 404 in 0.4462 ms
+2024-08-28 20:00:49.155 +07:00 [INF] HTTP GET /api/v1/Hotels/all responded 200 in 256.3242 ms

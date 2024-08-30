@@ -1,4 +1,3 @@
-using HotelListingAPI.VSCode.Data;
 using HotelListingAPI.VSCode.Models.User;
 using Microsoft.AspNetCore.Identity;
 

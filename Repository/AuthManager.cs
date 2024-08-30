@@ -6,8 +6,6 @@ using HotelListingAPI.VSCode.Contracts;
 using HotelListingAPI.VSCode.Data;
 using HotelListingAPI.VSCode.Models.User;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace HotelListingAPI.VSCode.Repository
@@ -90,7 +88,7 @@ namespace HotelListingAPI.VSCode.Repository
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"An error occurred during login attempt for user {loginDto.Email}");
-                throw; // Rethrow to handle it in higher-level logic if necessary
+                throw; 
             }
         }
 

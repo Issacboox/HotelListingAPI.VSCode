@@ -8,14 +8,11 @@ using HotelListingAPI.VSCode.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OData.UriParser;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -160,18 +157,24 @@ app.UseResponseCaching();
 
 app.Use(async (context, next) =>
 {
+    // กำหนด Cache Control Header
     context.Response.GetTypedHeaders().CacheControl =
     new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
     {
-        Public = true,
-        MaxAge = TimeSpan.FromSeconds(5)
+        Public = true, // บอกว่า Cache สามารถถูกเก็บไว้ในตัวกลาง (เช่น Proxy) ได้
+        MaxAge = TimeSpan.FromSeconds(5) // กำหนดระยะเวลา Cache เป็น 5 วินาที
     };
 
+    // กำหนด Vary Header
     context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
     new string[] { "Accept-Encoding" };
 
+    // เรียก middleware ถัดไป
     await next();
 });
+
+
+
 
 app.UseAuthorization();
 
